@@ -1,0 +1,375 @@
+*
+    box-sizing: border-box
+
+body
+    font-family: Montserrat Alternates
+    font-weight: 400
+
+.title
+    white-space: nowrap
+    font-weight: 700
+    font-size: 18px
+
+.header-section
+    display: flex
+    justify-content: space-between
+    margin: 40px 80px
+    &__nav
+        display: flex
+        justify-content: space-between
+        gap: 30px
+    &__link
+        text-decoration: none
+        color: #000
+        font-size: 22px
+        font-family: Montserrat Alternates
+        white-space: nowrap
+
+.main-section
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    padding: 100px 80px
+    &__text
+        font-size: 28px
+        font-weight: 700
+        max-width: 500px
+    &__img
+        width: 520px
+
+.slidertext
+    text-align: center
+    display: flex
+    justify-content: center
+    font-size: 64px
+    color: #ddd
+    align-items: flex-end
+
+.slide1
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-image: url(../img/main-section-img.jpg)
+
+.slide2
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-image: url(../img/main-section-img2.jpg)
+
+.wrapper
+    height: 250px
+    margin: 20px auto 0
+    position: relative
+    width: 500px
+    >input
+        display: none
+    .controls
+        display: flex
+        justify-content: center
+        align-items: center
+    label
+        cursor: pointer
+        display: inline-block
+        height: 8px
+        margin: 30px 12px 0 16px
+        position: relative
+        width: 8px
+        border-radius: 50%
+        transition: background ease-in-out .5s
+    label:after
+        border: 2px solid #ddd
+        content: ''
+        display: block
+        height: 12px
+        left: -4px
+        position: absolute
+        top: -4px
+        width: 12px
+        border-radius: 50%
+    label:hover,
+    #slide1:checked ~ .controls label:nth-of-type(1),
+    #slide2:checked ~ .controls label:nth-of-type(2)
+        background: #ddd
+
+.slider
+    background-color: #ddd
+    height: inherit
+    overflow: hidden
+    position: relative
+    width: inherit
+    border-radius: 20px
+
+.slides
+    height: inherit
+    opacity: 0
+    position: absolute
+    width: inherit
+    z-index: 0
+    transform: scale(1.5)
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2
+    opacity: 1
+    z-index: 1
+    transform: scale(1)
+
+    .wrapper label:hover,
+    #slide1:checked ~ .controls label:nth-of-type(1),
+    #slide2:checked ~ .controls label:nth-of-type(2)
+        background: #ddd
+
+    &:first-child
+        opacity: 1
+
+input[name="radio-btn"]
+    display: none
+
+.navigation
+    text-align: center
+    display: flex
+    justify-content: center
+    position: absolute
+    bottom: 20px
+    width: 100%
+
+    .bar
+        width: 20px
+        height: 4px
+        background-color: #bbb
+        margin: 0 4px
+        display: inline-block
+        cursor: pointer
+
+.second-section
+    display: flex
+    justify-content: space-evenly
+    padding: 100px 80px
+    &__left-wrapper
+        display: flex
+        flex-direction: column
+        gap: 100px
+    &__text-wrapper
+        display: flex
+        flex-direction: column
+        gap: 50px
+    &__first-text
+        display: flex
+        gap: 40px
+    &__title
+        font-size: 28px
+    &__lite
+        font-size: 18px
+
+.third-section
+    display: flex
+    padding: 100px 80px
+    flex-direction: column
+    &__wrapper
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+    &__title
+        font-size: 28px
+        margin-bottom: 60px
+        white-space: normal
+    &__text
+        font-size: 18px
+.four-section
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    gap: 80px
+    margin: 0px 80px 100px 80px
+    &__wrapper
+        display: flex
+        flex-direction: column
+    &__container
+        display: flex
+    &__title
+        font-size: 28px
+    &__first-text
+        display: block
+        padding: 20px
+        border-radius: 20px
+        border: 2px solid #D0B9FD
+    &__first-title
+        display: flex
+        width: 191px
+    &__container
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        gap: 50px
+    &__text-container
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 30px
+    &__content-container
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        gap: 20px
+        max-width: 200px
+    &__img
+        width: 180px
+        height: 180px
+
+.footer-section
+    display: flex
+    padding: 20px 80px
+    align-items: center
+    justify-content: center
+    gap: 50px
+    background: #000
+    color: #fff
+    &__left-wrapper
+        max-width: 300px
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &__title
+        font-size: 32px
+    &__number
+        font-size: 24px
+    &__text
+        padding-left: 30px
+    &__link
+        text-decoration: none
+        color: #fff
+    &__right-wrapper
+        display: flex
+        flex-direction: column
+        gap: 30px
+
+.contact-section
+    display: flex
+    justify-content: space-evenly
+    margin: 220px 80px
+    gap: 20px
+    &__left-content
+        display: flex
+        align-items: center
+        justify-content: center
+        background: #000
+        border-radius: 15px
+        width: 240px
+        height: 240px
+    &__left-wrapper
+        color: #fff
+        padding: 10px
+        width: 320px
+    &__content
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 30px
+        width: 250px
+    &__text
+        width: 200px
+    &__wrapper
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        max-width: 1000px
+        gap: 30px
+
+.services-section
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 30px
+    margin: 20px
+    &__card
+        width: 250px
+    &__text
+        display: flex
+        flex-direction: column
+        gap: 10px
+
+input
+    background: transparent
+    border: none
+    border-bottom: 1px solid #444
+    color: #fff
+
+textarea
+    background: transparent
+    border: 1px solid #444
+    width: 100%
+    color: #fff
+
+.submit-btn
+    border: 2px solid #CB2626
+    padding: 10px 20px
+    border-radius: 15px
+    background-color: #000
+    color: #CB2626
+    font-size: 16px
+    font-weight: bold
+    cursor: pointer
+    width: 200px
+
+@media (max-width: 1024px)
+    .main-section
+        flex-direction: column
+        gap: 30px
+    .header-section__link
+        font-size: 16px
+    .header-section
+        margin: 20px 20px
+    .second-section
+        flex-direction: column
+        align-items: center
+        gap: 50px
+    .second-section__text-wrapper
+        align-items: center
+    .footer-section
+        gap: 50px
+    .contact-section
+        flex-direction: column
+        align-items: center
+        gap: 50px
+@media (max-width:767px)
+    .main-section__img
+        width: 500px
+    .second-section__first-text
+        gap: 20px
+@media (max-width:575px)
+    .main-section__img
+        width: 300px
+        .header-section
+            margin: 20px 0px
+            width: 100%
+        .header-section__nav
+            gap: 7px
+        .header-section
+            flex-direction: column
+            gap: 10px
+            align-items: center
+        .second-section
+            padding: 40px
+        .second-section__first-text
+            justify-content: center
+            max-width: 310px
+            flex-wrap: wrap
+        .second-section__title
+            font-size: 22px
+            white-space: normal
+        .third-section
+            display: flex
+            justify-content: center
+            padding: 100px 20px
+        .four-section
+            margin: 0px 40px 100px 40px
+        .four-section__title
+            font-size: 22px
+        .footer-section
+            flex-direction: column
+        .footer-section__title
+            white-space: normal
